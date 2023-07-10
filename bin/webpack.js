@@ -89,6 +89,8 @@ const runCli = cli => {
 		);
 	} else {
 		// eslint-disable-next-line node/no-missing-require
+		// path.dirname 返回目录，path.dirname('/foo/bar/baz/asdf/quux') 将会返回 /foo/bar/baz/asdf
+		// 运行 webpack-cli/bin/cli.js
 		require(path.resolve(path.dirname(pkgPath), pkg.bin[cli.binName]));
 	}
 };
